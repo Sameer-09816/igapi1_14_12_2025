@@ -119,7 +119,7 @@ app = FastAPI(lifespan=lifespan)
 async def health():
     return {"status": "healthy"}
 
-@app.get("/api/download")
+@app.get("/download")
 async def get_media(url: str = Query(..., description="Instagram URL")):
     client = app.state.client
     try:
